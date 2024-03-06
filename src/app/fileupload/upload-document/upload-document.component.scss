@@ -1,0 +1,137 @@
+/* styles */
+
+mat-card {
+    background-color: #ececec;
+    margin: auto;
+    padding: 50px 25px;
+    border-radius: 25px;
+    max-width: 800px;
+  }
+  
+  form{
+    margin: 50px;
+  }
+  
+  .title-text {
+    font-size: 30px;
+    font-family: system-ui;
+    text-align: center;
+    font-weight: 600;
+    color: #555555;
+  }
+  
+  .file-container {
+    margin: auto;
+    width: 60%;
+    height: 35vh;
+    background: white;
+    border: 3px solid #dddddd;
+    border-radius: 15px;
+  }
+  
+  .content-text {
+    font-family: system-ui;
+    font-size: 20px;
+    font-weight: 400;
+  }
+  
+  .browse-btn {
+    font-size: 18px;
+    text-decoration: underline;
+    position: relative;
+    top: -1px;
+  }
+  
+  .done-btn {
+    width: 235px;
+    padding: 25px;
+    font-size: 18px;
+    border-radius: 25px;
+  }
+  
+  .progress-container {
+    width: 100%;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 30px;
+  }
+  
+  .progress-bar {
+    height: 100%;
+    background-color: #3f51b5;
+    border-radius: 30px;
+  }
+  
+  .file-icon {
+    transform: scale(2);
+    color: #123969;
+  }
+  
+  .image-text {
+    font-size: 20px;
+    font-family: system-ui;
+    color: #636363;
+    margin: 10px 0px 20px;
+    line-height: 30px;
+  }
+  
+  .upload-text {
+    font-size: 17px;
+    margin: 15px 5px;
+    font-family: emoji;
+    font-weight: 600;
+    color: #3f51b5;
+  
+  }
+  
+  .uploaded-text {
+    font-size: 17px;
+    margin: 20px 5px;
+    font-family: system-ui;
+    font-weight: bold;
+    color: #909090;
+  }
+  
+  .uploaded-icon {
+    color: #249c24d6;
+    position: relative;
+    top: 6px;
+    transform: scale(1.0);
+    left: 2px;
+  }
+  
+  .image-type {
+    font-weight: bold;
+    font-family: system-ui;
+    color: #848484;
+    padding-bottom: 15px;
+  }
+  
+  input {
+    opacity: 0;
+    position: absolute;
+    width: 50%;
+    height: 40%;
+    cursor: pointer;
+  }
+  
+  .material-symbols-outlined {
+    color: #123969;
+    transform: scale(4);
+  }
+  
+  
+  .material-symbols-outlined {
+    font-variation-settings:
+      'FILL' 0,
+      'wght' 400,
+      'GRAD' 0,
+      'opsz' 24
+  }
+  
+  /* for mobile approach */
+  @media screen and (max-width:980px) {
+    form{
+      display: none
+    }
+  }

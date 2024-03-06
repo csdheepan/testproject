@@ -1,0 +1,87 @@
+
+<!-- Form -->
+<form [formGroup]="form">
+
+    <!-- card -->
+  <mat-card>
+  
+    <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="45px">
+  
+      <h4 class="title-text">File Upload </h4>
+  
+      <div class="file-container">
+  
+        <div fxLayout="column" fxLayoutAlign="space-evenly center" style="height: 100%;">
+  
+         <!-- input Document field -->
+          <input type="file"(change)="onSelectFile($event, 'DOC_1')" formControlName="doc1"
+           [formControl]="form.controls['doc1']" #fileInput>
+  
+           <!-- error placing -->
+          <mat-error *ngIf="form.controls['doc1'].hasError('required') &&
+        form.controls['doc1'].touched && uploadIconDoc_1">Document Required</mat-error>
+  
+        <!-- for preview Image  -->
+          <div *ngIf="imageUrl"  [ngStyle]="{ 'opacity': (percentage === '100.00' ? 1 : 0.5) }">
+            <img [src]="url" height="200" width="410">
+          </div>
+  
+         <!-- for preview video  -->
+          <div *ngIf="showVideo"  [ngStyle]="{ 'opacity': (percentage === '100.00' ? 1 : 0.5) }">
+            <video width="280" height="200" controls>
+              <source  [src]="videoUrl" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>   
+           </div>
+  
+           <!-- upload field -->
+            <div *ngIf="uploadIconDoc_1" style="display: contents;">
+              <span class="material-symbols-outlined">backup</span>
+              <p  class="content-text">Drag and drop or <button class="browse-btn" 
+                 (click)="uploadFile()" mat-button color="primary">browse</button> your file</p>
+            </div>
+  
+        </div>
+  
+      </div>
+  
+    <div fxLayout="row" style="width: 55%;" fxLayoutGap="40px">
+  
+      <!-- show file type -->
+      <div fxLayout="column" fxLayoutAlign="space-evenly center">
+        <mat-icon class="file-icon" (click)="uploadFile()"> insert_drive_file</mat-icon>
+        <h4 class="image-type">{{fileType}}</h4>
+      </div>
+  
+      <!-- show file Name -->
+      <div fxLayout="column" style="width: 100%;">
+  
+        <h4 class="image-text">{{fileName}}</h4>
+  
+      <!-- upload progress -->
+        <div class="progress-container">
+          <div class="progress-bar" [style.width.%]="percentage"></div>
+        </div>
+  
+        <span *ngIf="percentage != '100.00'">
+          <p class="upload-text">Uploading ... {{ percentage }}%</p>
+        </span>
+  
+        <span *ngIf="percentage == '100.00'">
+          <p class="uploaded-text">Uploaded <mat-icon class="uploaded-icon">offline_pin</mat-icon></p>
+        </span>
+  
+      </div>
+  
+    </div>
+  
+    <!-- Reupload button -->
+      <div>
+        <button class="done-btn" mat-raised-button color="primary" (click)="uploadFile()">Reupload</button>
+      </div>
+  
+    </div>
+  
+  </mat-card>
+  
+  </form>

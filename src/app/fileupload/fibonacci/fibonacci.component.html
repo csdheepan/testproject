@@ -1,0 +1,12 @@
+<div fxLayout="row" fxLayoutAlign="center center" style="height: 100%;">
+    <div class="container">
+      <h1 style="text-align: center;">Fibonacci Calculator</h1>
+      <label class="h-value">Enter the position</label>
+      <input type="number" id="position" [(ngModel)]="position" placeholder="Enter position">
+      <button (click)="calculateFibonacci()">Calculate</button>
+      <div *ngIf="fibValue !== null" id="result">
+        The Fibonacci value at position {{ position }} is: {{ fibValue }}
+      </div>
+    </div>
+    
+    </div>
